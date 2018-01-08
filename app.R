@@ -214,6 +214,7 @@ server = function(input, output){
   #stockValue is essentially the same as portfolioValue, but returns a modified dataframe that allows for plotting multiple columns on same ggplot
   #chose to create two separate reactives so that users can easily switch between "plotting as separate" and "plotting as basket", since once both calculated it will be instantaneous
   stockValue = reactive({
+    
     stocks = tickersInput() #retrieve the tickers
     shares = sharesInput() #retrieve the # of shares
     
