@@ -1,6 +1,7 @@
 ## portfolioTracker - Shiny app
 ## load required packages
 
+library(tidyverse)
 library(shiny)
 library(shinythemes)
 library(quantmod)
@@ -75,7 +76,7 @@ server = function(input, output){
       tickers = fread(inFile$datapath, select = c("Ticker"))
       tickers = tickers$Ticker
     }
-    
+
     return(tickers)
   })
   
