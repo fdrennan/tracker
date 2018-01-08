@@ -61,6 +61,7 @@ ui = fluidPage(theme = shinytheme("united"),
 )
 
 server = function(input, output){
+  
   #Fix list of stock tickers
   tickersInput = reactive({
     if(input$tabset == "Enter Information"){
