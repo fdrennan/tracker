@@ -11,7 +11,7 @@ library(reshape2)
 library(data.table)
 
 #Initialize exampleData as global variable, used in "Upload CSV" tabset as download link
-# exampleData = fread("exampleData.csv")
+exampleData = fread("exampleData.csv")
 
 ui = fluidPage(theme = shinytheme("united"),
                
@@ -71,12 +71,12 @@ server = function(input, output){
       tickers = tickers[tickers != ""]
     }
     
-    # if(input$tabset == "Upload CSV"){
-    #   inFile = input$csv
-    #   tickers = fread(inFile$datapath, select = c("Ticker"))
-    #   tickers = tickers$Ticker
-    # }
-    # 
+    if(input$tabset == "Upload CSV"){
+      inFile = input$csv
+      tickers = fread(inFile$datapath, select = c("Ticker"))
+      tickers = tickers$Ticker
+    }
+
     return(tickers)
   })
   
